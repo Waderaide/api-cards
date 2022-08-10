@@ -17,9 +17,9 @@ export class CardsService {
   }
 
   addCard(val: any){
-    const header = {"content-type" : "application/json"}
-    const body = JSON.stringify(val);    
-    return this.http.post(this.baseUrl+'/add/', body, {"headers": header});
+    
+        
+    return this.http.post(this.baseUrl+'/add/', val);
   }
 
   deleteCard(val:any){
@@ -28,11 +28,11 @@ export class CardsService {
 
   updateCard(id: string, card: Cards) {
     
-     const header = {"content-type" : "application/json"}
-     const body = JSON.stringify(card);
+    
+    
      console.log(card.id); 
-     console.log(body);      
-     return this.http.put<Cards>(this.baseUrl+'/' + card.id, body, {"headers": header});
+           
+     return this.http.put<Cards>(this.baseUrl+'/' + card.id, card);
      
    }
   
